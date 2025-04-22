@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weekly Nerds</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section>
+            <h1>Weekly Nerds</h1>
+            <p>intro</p>
+        </section>
+        <section>
+            <ul>
+                <li>
+                    <article>
+                        <h2>CSS to the Rescue</h2>
+                        <p>Kilian </p>
+                        <details>
+                            <summary>Samenvatting:</summary>
+                        </details>
+                        <h3>Persoonlijke conclusie:</h3>
+                        <p>Mijn favoriete 'Weekly Nerd' van allemaal. Echte les over hoe CSS gebruikt kan worden, in
+                            plaats van JS, met allemaal nieuwe foefjes, die ook nog eens gedeeltelijk werden uitgelegd.
+                        </p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h2>Pay the Web Forward with Web Monetization </h2>
+                        <p>Peter-Paul Koch</p>
+                        <p>26th of February</p>
+                        <details>
+                            <summary>Samenvatting</summary>
+                            1. Why do we think all websites should be free?
+                            Komt uit de jaren 90, alle nieuws moest gratis zijn, want mensen moest afleren voor nieuws
+                            te betalen.
+                            Als websites gratis zijn, zijn ad’s de enige oplossing. Dus ad’s betalen ook niet echt goed.
+                            “If you use my articles to cut down your web dev time you are in a B-to-B relationship with
+                            me” - Paul Bakaus
+                            Websites verlenen je een dienst waar ze een vergoeding voor zouden moeten horen krijgen.
+                            Als we zo doorgaan, dan krijgen we uiteindelijk alleen maar te zien wat de rijke idioten
+                            willen dat we zien.
+                            “Het maakt niet uit wat de hype is, als er maar een hype is.”
+                            We moeten leren zelf voor toegang tot websites leren te betalen, anders verliezen we tegen
+                            de
+                            “We need to take back the web.” -> maar geld?
+                            Het is een gewoonte, een slechte gewoonte met niet te betalen voor de inspiratie en info.
+
+                            2. What do you want?
+                            Thou shalt pay or else! Dat is wel een beetje eng. Maar wat als we het niet doen?
+                            Er is geen morele plicht om te betalen, maar wel serieus gaan nadenken.
+                            Als developers niet betaald worden, verliezen ze tijd om geld te verdienen, veel tijd die
+                            het op ten duur niet waard is
+                            Een systeem dat iedereen kan gebruiken om toffe websites te betalen -> duidelijke eigenaar
+                            Uit onszelf betalen voor websites die leuk zijn/goed zijn
+                            We stream money. Tegen clickbaits.
+
+                            3. How? How you pay online?
+                            Betalen online is best vaak een beetje gedoe.
+                            - Een portemonnee/bankrekening
+                            - Met financiële systemen kunnen praten
+                            - Daarvoor moet je jezelf bewijzen aan de bank
+                            - Er zijn heel veel regels en wetten hiervoor die moeten worden nageleefd en worden gecheckt
+                            door mensen die niet super snel zijn
+                            - Crypto mag de pot op = eens
+                            - Extension voor chrome en de rest
+                            - Hoeveel zijn mensen bereid aan tijd de besteden
+                            Dit moet een sociale oplossing zijn. Een mindset.
+                            Er is vertrouwen hiervoor nodig.
+                            Site zet nu de prijs, maar er is bewust gekozen dit niet te doen, als bezoeker bepaal jij
+                            wat jij betaalt voor de site.
+
+                            4. Support
+                            Extension “Web Monetization” -> rel="monetization” + href=“https:///wallet.example/ppk”
+                            Web Monteization Agent
+                            1. Browser finds link
+                            2. Het doen van de betalingen
+                            3. Er wordt even event afgeschoten
+
+                            Kijken wat voor reactie komt uit de web dev’s wanneer ze betaald worden.
+                            Post-paid. Werkt offline. Minder requests. Maar wordt later betaald, en payment data moet
+                            worden opgeslagen.
+                            Elke link tag krijgt hetzelfde voor dingen zoals wikipedia. Er is NOG geen verschil voor een
+                            verdeel sleutel.
+                            De hoeveelheid informatie in een seconde is in elke taal hetzelfde.
+                        </details>
+                        <h3>Personal conclusion:</h3>
+                        <p>Al zie ik de kern van het probleem in, en ben ik er niet vreselijk tegen, vind ik dit idee
+                            nog iets te abstract om een vol oordeel over uit te spreken. Er lijken nog best veel gaten
+                            te vallen op gebieden waar makkelijk misbruik van gemaakt kan worden, daarnaast ga je nog
+                            steeds uit van mensen die uit eigen wil dit geven. Ook, persoonlijk als student, zou ik er
+                            niet snel toe aangetrokken zijn, puur omdat financiën een best groot en belangrijk deel is
+                            als student.</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Beyond Tweening</h3>
+                        <p>Cassie</p>
+                        <p>GSAP</p>
+                        <details>
+                            <summary>Smanevatting:</summary>
+                            Animation library for the web that allows to animate EVERYTHING
+                            GSP overview:
+                            Tweens = singular animation
+                            gsap.to(“.box”, { x:200})
+                            To = method
+                            .box = target
+
+
+                            Timeline is for a lot of sequences
+                            Let tl = gsap.timeline();
+                            tl.to(“#green”, {duration: 1, x:918})
+                            tl.to(“#green”, {duration: 1, x:918})
+                            tl.to(“#green”, {duration: 1, x:918})
+
+                            Extra plugins
+
+                            Boring stuff is done behind the scene
+
+                            GSAP = a tool animation toolbox with everything
+
+                            Quick setter(direct heel snel, maar geen ease, etc)
+                            Quick to (animate possible)
+
+                            Utils:
+                            utils.random(between number 1, number 2, snapped to the closest increment of number)
+                            Or
+                            ([“array’]) also possible
+                            Possible in a variety of
+                            Repeat/repeatRefresh/invalidate
+
+                            mapRange()
+                            Map animation to range of screen
+
+                            utils.wrap
+                            Wrapping around, not based on pixels but on screen size
+
+                            utils.pipe()
+                            Pipe through different values
+                            .snap 200
+
+                            Let ease do the work
+                            Custom eases, even repeat
+
+                            matchMedia() basically like media queries, device orientation, pointer events
+                            Adding conditions: (prefers-reduced-motion: reduce), adjust animations
+
+                            globalTimeline.timeScale <- speeds up the animation Control methods play(), pause, resume,
+                                reverse, restart, skip/progress Helper functions Container animation (scroll trigger
+                                within a scroll trigger) MotionPathHelper so you can edit path follower SVG stuff On
+                                quick hover different animation, then longer hover Add pause in the middle of the
+                                animation </details>
+                                <h3>Persoonlijke conclusie:</h3>
+                                <p>Soort promotie praatje waar niet veel uitgehaald kon worden behalve omgaan met GSAP
+                                    op een iets te lastig niveau, waardoor ik er vrij weinig van op kon steken</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Declarative Design </h3>
+                        <p>Jeremy Keith</p>
+                        <details>
+                            <summary>Samenvatting:</summary>
+                        </details>
+                        <h3>Persoonlijke conclusie:</h3>
+                        <p>Een erg leerzame les over mindsets, en hoe die je kan beinvloeden, ook in het werkende leven.
+                        </p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Hackers everywhere</h3>
+                        <p>Rosa</p>
+                        <details>
+                            <summary>Samenvatting:</summary>
+                            Hacker is a person skilled information technology who achieves goals by nonstandard
+                            Je backed draaien op google sheet
+                            Je eigen CMS bouwen omdat je net iets specifieks zoekt
+                            Acties om zoveel mogelijk niet afhankelijk te zijn van externe bronnen
+                            Platform-agnostisch worden/zijn, zodat je kunt kiezen welke ingrediënt je nodigt hebt om je
+                            doel te bereiken
+
+                            DIY ethos, 70’ punk movement, the act of using custom electronic devices to get free long
+                            distance phone calls
+                            If is do it yourself not plan it yourself,
+                            Yourself but not alone
+                            Wat gebeurt er als? -> helpt als vraag -> inspect
+                            Aanrader om met imagemagic te gaan spelen
+
+                            Keep it simple, stupid
+                            Learn by trying
+                            Bash kan een uitdaging zijn
+
+                            Hacklabs zijn handig om andere hackers/nerds te ontmoeten
+                            Samen kloten met code
+                            Elkaar helpen en ondersteunen in van alles
+                            Elektronica voor beginners
+
+                            Bij oudere apparaten kun je nog goed zien wat er gebeurt
+                            Er ontstaan steeds meer onrepareerbare black boxes
+                            Abstracties cloud opmeting illusie dat er geen fysieke servers meer bestaan
+                            Vibe coding in plaats begrijpen wat float is
+                            Wordt je eigen PC steeds meer een black box en daarmee steeds van jou.
+                        </details>
+                        <h3>Persoonlijke conclusie:</h3>
+                        <p>ga los op zelf iets maken met oude zooi, in plaats van externe bronnen gebruiken/hulp
+                            Dingen van nu worden gemaakt om kapot te gaan, als je zelf iets maakt met dingen vroeger,
+                            waren ze nooit bedoeld om kapot te gaan</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Geld verdienen met ‘Project Fugu’</h3>
+                        <p>Niels Leenheer</p>
+                        <details>
+                            <summary>Samenvatting:</summary>
+                        </details>
+                        <h3>Persoonlijke conclusie:</h3>
+                        <p>Erg onder de indruk van doorzettingsvermogen. Intressant om na te denken hoe apparaten die
+                            niet een laptop of mobiel zijn, nog steeds gebruikt kunnen worden via een laptop en
+                            bruikbaar zijn.</p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Practical Fixes for Common WCAG failures</h3>
+                        <p>Erik Kroes</p>
+                        <details>
+                            <summary>Samenvatting:</summary>
+                        </details>
+                        <h3>Persoonlijke conclusie:</h3>
+                        <p>Al waren sommige dingen die verteld werden al wel vaker terug gekomen, toch wel een paar
+                            leuke nieuwe dingen om op te letten of te gebruiken.</p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>
