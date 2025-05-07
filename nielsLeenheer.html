@@ -1,0 +1,107 @@
+Geld verdienen met ‘Project Fugu’
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hoe maak je een kassa met web technologie</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside>
+            <h2>Informatie</h2>
+            <ul>
+                <li>Naam: Hoe maak je een kassa met web technologie</li>
+                <li>Presentator: Niels Leenheer</li>
+                <li>Interesse: ⭐️⭐️⭐️⭐️</li>
+            </ul>
+        </aside>
+        <section>
+            <h1>Hoe maak je een kassa met web technologie</h1>
+            <p>Niels Leenheer</p>
+            <article>
+                <details>
+                    <summary>Samenvatting</summary>
+                    <ol>
+                        <li>
+                            <h2>Geld verdienen met ‘Project Fugu’</h2>
+                            <p>Medeoprichter van salonhub, voor kappers. Erg veel gebruikt/bekend. Het kassa systeem,
+                                met behulp van web technologie (en electron?). De software is puur web technologie.</p>
+                            <p>Probleem was altijd dat het moeilijk was om met pinautomaten, printers, etc te praten.
+                                Maar kan nu wel, geweldig. Niet vaak praat hij over zijn werk.</p>
+                            <p>Kreeg email van iemand bij Google, over ‘Project Fugu’. Doel: het web een PWE maken en
+                                laten communiceren met hardware, minder afhankelijk laten zijn van Appstores, native
+                                apps, etc. Samen met API’s zoals WebUSB, WebSerial, WebBluetooth, etc.</p>
+                            <p>Vraag van Google-man: kan jij een demo maken, binnen 4 weken met behulp van de API’s en
+                                wordt het getoond op Google Miami stuff. Maar er was nog geen product. En dat heeft wel
+                                lang geduurd, sinds 2010. 2015 apparaten koppelen. 2017 papieren bon printen met
+                                Bluetooth.</p>
+                            <p>Demo werd over de hele wereld meegenomen. “Hartstikke mooi”.</p>
+                        </li>
+                        <li>
+                            <h2>Bonnenprinter</h2>
+                            <p>WebUSB wordt gebruikt.</p>
+                            <pre><code>let device = await navigator.usb.requestDevice({ 
+    filters: [ { vendorId: 'seiko epson corp.' } ] 
+});</code></pre>
+                            <p>Usb device, de TL;DR. Printer heeft 1 interface. Met meerdere functionaliteiten heb je
+                                meerdere interfaces. Elke interface heeft meerdere endpoints. Endpoints zijn dingen
+                                waarmee je kan praten. Sturen en krijgen. Printer heeft 2 endpoints: wat je wil printen,
+                                en wat er geprint wordt.</p>
+                            <p>Je claimt de interface, dat zorgt ervoor dat niemand anders gegevens er tussendoor kan
+                                sturen, en daarna verbreek je dat weer. Je hebt maar weinig regels code nodig om te
+                                praten met de printer. Je praat wel met de printer maar je spreekt de taal niet.</p>
+                            <p>De taal die zij spreken is ouder dan HTML. 1992/93. Printers gaan we terug naar 1990.
+                                Beroemde MX80, met de taal (die uit de jaren 70 komt), maken ze kleiner en vertalen ze
+                                naar iets. Gebaseerd op ASCII. Heb je alle tekens die je nodig hebt. Maakt gebruik van
+                                “escape characters”.</p>
+                            <p>ESC @ (start) Hallo LF<br>
+                                Esc E 1: Weekly Nerd (bold aan + tekst) Esc E 0 -> LF<br>
+                                GS V 0 -> om af te knippen</p>
+                            <p>Maar hoe zit het met die andere tekens, zoals het euroteken? ASCII is niet meer genoeg,
+                                dus internationalisatie voor Unicode.</p>
+                        </li>
+                        <li>
+                            <h2>Kassalade</h2>
+                            <p>Stuur een puls naar de DK-poort (niet alle hebben ze), daar zit een magnetisch iets, en
+                                dat de lade dan opent.</p>
+                            <p>EscPosEncoder om als bibliotheek te gebruiken.</p>
+                            <pre><code>let encoder = new EscPosEncoder();
+let payload = encoder
+    .initialize()
+    .text('Something');</code></pre>
+                            <p>Maar dat kan toch niet zo simpel zijn? Niet alles ondersteunt ESC/POS, dus zijn er weer
+                                veranderingen.</p>
+                        </li>
+                        <li>
+                            <h2>Barcode scanner</h2>
+                            <p>Barcode scanners zijn gewoon toetsenborden. Hij typt letters en doet enter. WebHID kun je
+                                hele barcodes lezen in plaats van de individuele cijfers.</p>
+                            <p>Je vraagt device op. Hebben meerdere functies, moet je je juiste usagePage ophalen, dan
+                                keyboard emulation uitzetten.</p>
+                            <p>Je kan verschillende barcode soorten hebben. Allemaal naar Global Trade Identification
+                                Number door de verschillende lengtes. Maar de barcodes gaan ze verdwijnen. Alles wordt
+                                vervangen door QR-codes, GS1 Digital Link/GTIN.</p>
+                        </li>
+                    </ol>
+                </details>
+                <h3>Persoonlijke conclusie:</h3>
+                <p>Ik ben erg onder de indruk van doorzettingsvermogen van deze man, hoe hij keer op keer een library heeft gemaakt werd op een gegeven moment gewoon een soort grapje, al was het alleen maar indrukwekkend naar mijn mening. Ook vond ik het interessant om na te denken hoe apparaten die niet een
+                    laptop of mobiel zijn, nog steeds gebruikt kunnen worden via een laptop en bruikbaar zijn. Voornamelijk wil ik hieruit meenemen dat een project zoals deze langer mag duren, en veel up's en down's heeft, maar dat je met doorzettingsvermogen een heel groot eind kan komen.</p>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
